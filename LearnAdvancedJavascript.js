@@ -228,3 +228,87 @@ user.age = user.age + 1;
 console.log(user);
 
 // Chapter 9 Arrow Functions !
+
+// Preventing NaN (Not A Number )
+
+function addingNumber(number = 0) {
+  // default parameter is 0
+  return number + 5;
+}
+
+console.log("addingNumber:", addingNumber()); // its empty , this is how you avoid NAN
+console.log("addingNumber:", addingNumber(5)); // this works normally !
+
+// Another Example !
+
+function defaultUser(name = "user") {
+  return ` Hello ${name}`;
+}
+
+console.log("defaultUser:", defaultUser("Dododile"));
+console.log("defaultUser:", defaultUser()); // this is empty this avoids Nan .
+
+// preventing Nan In Array like situations
+
+function logUserIds(userIds = []) {
+  // we left the array [] empty to prevent Nan
+  userIds.forEach(function (userIds) {
+    console.log(userIds);
+  });
+}
+
+console.log("logUserIds:", logUserIds([5, 10, 15, 20]));
+console.log("logUserIds:", logUserIds([]));
+
+// Introduction To Arrow Functions !
+
+let substraction = (value) => {
+  // in Arrow function we remove (function)
+  return value - 5;
+};
+
+console.log("substraction:", substraction(15));
+
+// Another Example of Arrays Function
+
+let multiplication = (a, b) => {
+  return a * b;
+};
+
+console.log("multiplication:", multiplication(10, 25));
+
+// Using Arrow Functions In Array Methods !
+
+const plusGrades = (grades) => {
+  let sum = 0;
+  grades.forEach((grade) => {
+    console.log(grade);
+    sum += grade;
+  });
+  return sum;
+};
+
+console.log("sumGrades:", plusGrades([5, 10, 15, 20]));
+
+// Another Example Arrow Functions with .Filter Method !
+
+let registrationNumbers = [9, 5, 14, 3, 11];
+const registrationofnNumbers = numbers.filter((number) => {
+  return number > 10;
+});
+
+console.log();
+
+// Another Example
+
+const getPositiveTemperatures = (temperatures) => {
+  return temperatures.filter((temperature) => {
+    return temperature > 0;
+  });
+};
+
+console.log("getPositiveTemperature:", getPositiveTemperatures([-5, 12, 3]));
+console.log(
+  "getPositiveTemperature:",
+  getPositiveTemperatures([1, -3, -2, 4, 10])
+);
